@@ -1,0 +1,115 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+}
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+}
+.clock {
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 7px 6px 10px -5px rgba(90, 84, 133, 0.5),
+        -5px -4px 10px rgba(224, 219, 243, 0.9),
+        /* -1px 1px 10px rgba(69, 69, 69, 0.8), */
+        inset 3px 2px 50px rgba(205, 204, 220, 0.9),
+        inset 3px 2px 15px 2px rgba(234, 228, 255, 0.9),
+        inset -10px -10px 15px 1px rgb(255, 255, 255);
+        /* inset -3px 2px 10px rgba(242, 242, 242, 0.9); */
+    
+}
+
+.clocked-center {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.seconds-center {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: gray;
+    transform: rotateZ(30deg);
+}
+
+.seconds-center::before {
+    content: "";
+    position: absolute;
+    left: 1.5px;
+    border: 0.5px solid rgb(153, 152, 159);
+    border-radius: 1px;
+    top: -4px;
+    width: 1px;
+    height: 75px;
+    background-color: rgb(124, 121, 130);
+}
+
+.minutes-center {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.minutes-center::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: -4px;
+    width: 2px;
+    border-radius: 1px;
+    height: 60px;
+    background-color: rgb(103, 101, 115);
+}
+
+.hours-center {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+}
+
+.hours-center::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    width: 4px;
+    border-radius: 2px;
+    height: 55px;
+    background-color: rgb(64, 64, 70);
+}
+
+.hours-center, .minutes-center, .seconds-center {
+}
+
+.center {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    transform: translate(-1px, -1px);
+    border-radius: 50%;
+    background-color: black;
+}
