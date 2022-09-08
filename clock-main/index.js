@@ -63,7 +63,7 @@ const timing = () => {
 
     (String(ss).length == 1) ? ss = "0" + String(ss) : ss;
 
-    (hh > 12) ? decrement(hh) : time_of_day.innerText = "AM";
+    (hh > 12) ? {time_of_day.innerText = "PM"; hh -= 12;} : time_of_day.innerText = "AM";
     
     time_rn.innerText = `${hh} : ${mm} : ${ss}`;
 }
