@@ -51,7 +51,7 @@ const time_of_day = document.querySelector('.time-of-day');
 
 const decrement = (props) => {
     time_of_day.innerText = "PM"
-    return props = props - 12;
+    return props -= 12;
 }
 
 
