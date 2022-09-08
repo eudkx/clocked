@@ -113,3 +113,17 @@ body {
     border-radius: 50%;
     background-color: black;
 }
+
+.time-now {
+    width: 120px;
+    height: 18px;
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.time-of-day {
+    font-size: 12px;
+    align-self: flex-start;
+}

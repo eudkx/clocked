@@ -32,6 +32,7 @@ const rotating = () => {
     const date_seconds = date.getSeconds();
     const date_minutes = date.getMinutes();
     const date_hours = date.getHours();
+
     seconds_arrow.style.transform = `rotateZ(${6 * date_seconds + 180}deg)`;
     (date_seconds == "00") ? seconds_arrow.style.transform = `rotateZ(180deg)` : 0;
 
@@ -44,3 +45,28 @@ const rotating = () => {
 }
 
 const timed = setInterval(rotating, 1000);
+
+const time_rn = document.querySelector('.time-content');
+const time_of_day = document.querySelector('.time-of-day');
+
+const decrement = (props) => {
+    time_of_day.innerText = "PM"
+    return props = props - 12;
+}
+
+
+const timing = () => {
+    const date = new Date();
+    let [hh, mm, ss] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+
+    (String(mm).length == 1) ? mm = "0" + String(mm) : mm;
+
+    (String(ss).length == 1) ? ss = "0" + String(ss) : ss;
+
+    (hh > 12) ? decrement(hh) : time_of_day.innerText = "AM";
+    
+    time_rn.innerText = `${hh} : ${mm} : ${ss}`;
+}
+
+let timed_time = setInterval(timing, 1000);
+
