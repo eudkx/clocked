@@ -68,7 +68,7 @@ const timing = () => {
         hh = date.getHours() - 12;
     } else {
         time_of_day.innerText = "AM";
-    
+    }
     time_rn.innerText = `${hh} : ${mm} : ${ss}`;
 }
 
